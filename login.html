@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--CSS Materialize CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Fonts Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--CSS Link-->
+    <link rel="stylesheet" href="#">
+    <!--Website Title-->
+    <title>St. Vincent College of Cabuyao</title>
+
+    <style>
+        body {
+            background-image: url(assets/backdrop.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;    
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+
+        .logo {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        .login-container {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        .forgot-password {
+            display: block;
+            margin-bottom: 12px;
+            color: #4d0000;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .btn-custom {
+            background-color: #4d0000;
+        }
+        .btn-custom:hover {
+            background-color: #DACC4B;
+        }
+    </style>
+
+    </head>
+
+    <body>
+        <div class="overlay"></div>
+        <div class="login-container">
+            <img src="assets/svcc.ico" alt="Logo" class="logo">
+            <h4 class="center">Login</h4>
+            <form>
+                <div class="input-field">
+                    <input id="email" type="email" class="validate" required>
+                    <label for="email">Student No.</label>
+                    <span class="helper-text" data-error="Invalid email" data-success="Valid email"></span>
+                </div>
+                <div class="input-field">
+                    <input id="password" type="password" class="validate" required>
+                    <label for="password">Password</label>
+                </div>
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <div class="center">
+                    <button class="btn btn-custom waves-effect waves-light" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+
+        <!--CSS Materialize Script CDN-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>
