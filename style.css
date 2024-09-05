@@ -1,14 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body{
-    background-image: linear-gradient(to bottom, #e04f4f00 ,#a1151569,#b00e4185,#59011D);
+    background-image: linear-gradient(to bottom,#ffffff 10%, #5a000036 );
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
 }
 main{
-    flex: 1 0 auto;
     height: 100%;
     width: 100%;
 }
@@ -20,4 +20,9 @@ main{
     font-family: sans-serif; 
     font-style: normal; 
     font: weight 50px;;
+    
 } 
+
+.footer {
+    bottom: 0%;
+}
