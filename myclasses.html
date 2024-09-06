@@ -60,6 +60,7 @@
     <!--Main-->
     <div class="main">
         <div class="row" style="margin: 0;">
+            <!--Side Drawer-->
             <div class="col s2 white"
                 style="width: 20vw; height: 50rem; box-shadow: 3px 1px 18px 1px rgba(101,18,45,0.45);">
                 <div>
@@ -107,19 +108,36 @@
                     </ul>
                 </div>
             </div>
-            <div class="col s8" style="width: 55rem; margin-inline: auto; margin-left: 30px;">
+            <!--Main-content-->
+            <div class="col s8" style="width: 55rem; margin-inline: auto;  margin-left: 30px;">
                 <div class="card-panel center-align"
-                    style="height: 90px; margin-top: 20px; margin-bottom: 20px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
+                    style="height: 90px; margin-bottom: 30px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
                     <span class="white-text"
-                        style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">WELCOME
-                        VINCENTIANS</span>
+                        style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">MY CLASSES</span>
                 </div>
-                <div class="card-img center-align"
+                <div class="card center-align"
                     style="height: 600px; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 20px;">
-                    <img class="responsive-img" src="assets/announcement.jpg" alt="announcement"
-                        style="height: 100%; padding: 20px">
+                    <div class="row">
+                        <div class="col s12"
+                            style="font-family: roboto; margin-inline: auto; font-style: normal; display: flexbox; flex-wrap: wrap; top: 30px; padding: 20px;">
+                            <ul class="tabs" style="color: #4d0000; border-radius: 5px;">
+                                <li class="tab col s3"><a class="active" href="#enrolled">Enrolled</a></li>
+                                <li class="tab col s3"><a class="active" href="#completed">Completed</a></li>
+                            </ul>
+                        </div>
+                        <div id="enrolled" class="col s12"
+                            style="font-family: roboto; color: aliceblue; font-size: medium; margin-inline: auto; font-style: normal; opacity: 50%; padding:20%">
+                            <p>You're still not yet added to any classes.</p>
+                        </div>
+                        <div id="completed" class="col s12 center-align"
+                            style="font-family: roboto; color: aliceblue; font-size: medium; margin-inline: auto; font-style: normal; opacity: 50%; padding:20%">
+                            <p>You still haven't completed any courses.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!--Right Side-->
+            <div></div>
             <div class="col s2 right" style="width: 17vw; margin: 0;">
                 <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
                 </div>
@@ -144,8 +162,15 @@
         </div>
     </footer>
 
-    <!--CSS Materialize Script CDN-->
+    <!--JQUERY CDN-->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!--CSS Materialized JS CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.tabs').tabs();
+        });
+    </script>
 </body>
 
 </html>
