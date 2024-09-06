@@ -7,10 +7,21 @@ body{
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
+    max-width: 1800px;
 }
-main{
+
+.main{
     height: 100%;
     width: 100%;
+    display: flexbox;
+    flex-wrap: wrap;
+    margin-inline: auto;
+}
+
+.collection{
+    display: flexbox;
+    flex-wrap: wrap;
+    margin-inline: auto;
 }
 
 .collection-item{
@@ -19,8 +30,7 @@ main{
     font-size: large;
     font-family: sans-serif; 
     font-style: normal; 
-    font: weight 50px;;
-    
+    font: weight 50px;
 } 
 
 .footer {
