@@ -72,11 +72,11 @@
         <div class="login-container">
             <img src="assets/svcc.ico" alt="Logo" class="logo">
             <h4 class="center">Login</h4>
-            <form>
+            <form id="loginForm">
                 <div class="input-field">
-                    <input id="email" type="email" class="validate" required>
-                    <label for="email">Student No.</label>
-                    <span class="helper-text" data-error="Invalid email" data-success="Valid email"></span>
+                    <input id="studentNumber" type="number" class="validate" required>
+                    <label for="studentNumber">Student Number</label>
+                    <span class="helper-text" data-error="Invalid Student Number" data-success="Valid Student Number"></span>
                 </div>
                 <div class="input-field">
                     <input id="password" type="password" class="validate" required>
@@ -87,9 +87,11 @@
                     <button class="btn btn-custom waves-effect waves-light" type="submit">Login</button>
                 </div>
             </form>
+            <p id="errorMsg" style="color: red;"></p>
         </div>
 
         <!--CSS Materialize Script CDN-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="loginFunc.js"></script>
     </body>
 </html>
