@@ -19,107 +19,114 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="nav-extended" style="background-color: #65122D;">
-        <div class="nav-wrapper white">
-            <img src="assets/svcc.ico" class="brand-logo left" style="height: 50px; top: 5px; margin-left: 5px;" alt="">
-            <a href="#!" class="brand-logo left"
-                style="color:#4d0000; font-size: x-large; font-weight: bold; font-family: serif; margin-left: 60px;">ST.
-                VINCENT COLLEGE OF CABUYAO</a>
-            <ul class="right hide-on-med-and-down red-text">
-                <li><a href=""><i class="material-icons" style="color:#4d0000">search<i></a></li>
-            </ul>
-        </div>
-        <div class="nav-content">
-            <span class="nav-title left"
-                style="color: #DACC4B; padding: 18px; font-family: Arial;font-weight: bold; font-style: normal; font-size: 1.5rem;">SVCC</span>
-            <ul class="right">
-                <li>
-                    <a href="#" class="href">
-                        <i class="material-icon" style="font-style: normal;">notifications</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="href">
-                        <i class="material-icon" style="font-style: normal;">message</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="href">
-                        <i class="material-icon" style="font-style: normal;">help</i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="href">
-                        <i class="material-icon" style="font-style: normal;">brightness_medium</i>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <nav class="nav-wrapper white" style="position: fixed; top: 0;
+    z-index: 1000;">
+        <img src="assets/svcc.ico" class="brand-logo left" style="height: 50px; top: 5px; margin-left: 5px;" alt="">
+        <a href="#!" class="brand-logo left"
+            style="color:#4d0000; font-size: x-large; font-weight: bold; font-family: serif; margin-left: 65px;">ST.
+            VINCENT COLLEGE OF CABUYAO</a>
+
+        <form class="right"
+            style="margin-right: 30px; margin-top: 10px; height: 50px; width: 300px; background-color: #4d0000c4; border-radius: 20px; margin: 10px;">
+            <div class="input-field">
+                <input id="search" type="search" required placeholder="Search">
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+    </nav>
+    <nav class="nav-content" style="background-color:#4d0000; position: fixed; top: 60px; z-index: 999;">
+        <span class="nav-title left"
+            style="color: #DACC4B; padding-top: 3px; margin-left: 10px; font-family: Arial;  font-weight: bold; font-style: normal; font-size: 1.5rem;">SVCC</span>
+        <ul class="right" style="padding-top: 6px; margin-right: 20px;">
+            <li>
+                <a href="#" class="href">
+                    <i class="material-icons" style="font-style: normal;">notifications</i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="href">
+                    <i class="material-icons" style="font-style: normal;">message</i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="href">
+                    <i class="material-icons" style="font-style: normal;">help</i>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" class="href" style="margin-left: 40px;">
+                    <i class="material-icons" style="font-style: normal;">brightness_medium</i>
+                </a>
+            </li>
+        </ul>
     </nav>
 
     <!--Main-->
     <div class="main">
-        <div class="row" style="margin: 0;">
-            <!--Side Drawer-->
-            <div class="col s2 white"
-                style="width: 20vw; height: 50rem; box-shadow: 3px 1px 18px 1px rgba(101,18,45,0.45);">
-                <div>
-                    <ul class="collection">
-                        <li class="collection-item avatar" style="padding: 4px;">
-                            <img src="assets/castro-img.png" alt="" class="circle responsive-img"
-                                style="height: auto;width: 30%; top: 17px; margin-inline: auto;">
+        <div class="row">
 
-                            <div class="name center"
-                                style="font-size: 1vw; font-family: sans-serif; font-style: normal; font-weight: bold; color: black; display: flex; flex-wrap: wrap; margin: 7%;margin-left: 40%;">
-                                Castro, Janna M.
-                                <div class="card-action center">
-                                    <hr style="width: 100%; height: min-content;">
-                                    <a href="#"
-                                        style="font-size: 1vw; font-weight: 450; color: black; display: flex; flex-wrap: wrap;">AY2022-00893</a>
-                                </div>
-                            </div>
-                        </li>
-                        <a href="main.html" class="collection-item"
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i class="material-icons"
-                                style="color: #4d0000;font-size: x-large; margin-right: 15px; float: left; ">dashboard</i>Dashboard</a>
-                        <a href="myclasses.html" class="collection-item"
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i
-                                class="fa-solid fa-chalkboard"
-                                style="color: #4d0000;font-size: x-large; margin-right: 15px; float: left; "></i>My
-                            Classes</a>
-                        <a href="#!" class="collection-item "
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i class="material-icons"
-                                style="color: #4d0000;font-size: x-large; margin-right: 15px; float: left;">people</i>
-                            My Groups</a>
-                        <a href="#!" class="collection-item "
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i class="material-icons"
-                                style="color: #4d0000;font-size: x-large; margin-right: 15px; float: left;;">event</i>
-                            My Schedule</a>
-                        <a href="#!" class="collection-item "
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i
-                                class="fa-solid fa-hard-drive"
-                                style="color: #4d0000;font-size: large; margin-right: 15px; margin-top: 2px; float: left;"></i>My
-                            Locker</a>
-                        <a href="#!" class="collection-item "
-                            style="color: #4d0000; padding-top: 40px; padding-left: 25px;"><i
-                                class="fa-solid fa-rectangle-list"
-                                style="color: #4d0000;font-size: large; margin-top: 2px; margin-right: 15px; float: left;"></i>
-                            Catalog</a>
-                    </ul>
+            <!--Left Content-->
+            <div class="col s12 m4 l3 "
+                style="  background: rgba(255, 255, 255, 0.80); box-shadow: 3px 1px 18px 1px rgba(101,18,45,0.45); height: 700px; position: fixed; width: 255px;">
+                <div class="container">
+                    <img src="assets/castro-img.png" alt="" class="circle responsive-img"
+                        style=" height:65px; margin-top: 30px; margin-left: 12px; margin-bottom: 12px; box-shadow: 3px 1px 18px 1px rgba(101,18,45,0.45);">
+                    <a href="#!" class="secondary-content"><i class="fa-solid fa-pen-to-square"
+                            style="color: #4d0000; font-size: 15px; padding-top: 10px; padding-right: 7px;"></i></a>
+                    <div class="name center" style="font-size:15px; font-family: sans-serif; font-style: normal; font-weight: bold;
+                        padding: 1px; margin-left: 70px; margin-top: -80px; margin-bottom: 20px; color: black;">Castro,
+                        Janna M.
+                        <hr style="width: 120px;">
+                        <a href="#" style="font-size: 14px; font-weight: 450; color: black;">AY2022-00893</a>
+                    </div>
+                </div>
+                <div class="collection">
+                    <a href="main.html" class="collection-item"
+                        style="color: #4d0000; padding-top: 25px; margin-left: 7px; padding-bottom: 20px;"><i
+                            class="material-icons"
+                            style="color: #4d0000;font-size: x-large; margin-right: 5px; float: left;">dashboard</i>My
+                        Dashboard</a>
+                    <a href="myclasses.html" class="collection-item "
+                        style="color: #4d0000; padding-top: 25px; padding-left: 25px; padding-bottom: 20px;"><i
+                            class="fa-solid fa-chalkboard"
+                            style="color: #4d0000; font-size: x-large; margin-right: 5px; float: left; font-size: 20px;"></i>My
+                        Classes
+                    </a>
+                    <a href="#!" class="collection-item "
+                        style="color: #4d0000; padding-top: 25px; padding-left: 25px; padding-bottom: 20px;"><i
+                            class="material-icons"
+                            style="color: #4d0000;font-size: x-large; margin-right: 5px; float: left;">people</i> My
+                        Groups</a>
+                    <a href="#!" class="collection-item "
+                        style="color: #4d0000; padding-top: 25px; padding-left: 25px;padding-bottom: 20px;"><i
+                            class="material-icons"
+                            style="color: #4d0000;font-size: x-large; margin-right: 5px; float: left;;">event</i> My
+                        Schedule</a>
+                    <a href="#!" class="collection-item "
+                        style="color: #4d0000; padding-top: 25px; padding-left: 25px;padding-bottom: 20px; "><i
+                            class="material-icons"
+                            style="color: #4d0000;font-size: x-large; margin-right: 5px; float: left;;">collections_bookmark</i>Catalog</a>
+                    <a href="#!" class="collection-item "
+                        style="color: #4d0000; padding-top: 25px; padding-left: 25px;padding-bottom: 20px;"><i
+                            class="material-icons"
+                            style="color: #4d0000;font-size: x-large; margin-right: 5px; float: left;;">folder_open</i>Locker</a>
                 </div>
             </div>
-            <!--Main-content-->
-            <div class="col s8" style="width: 55rem; margin-inline: auto;  margin-left: 30px;">
+
+            <!--Main Content-->
+            <div class="col s8" style="width: 55rem; margin-inline: auto;  margin-left: 300px;">
                 <div class="card-panel center-align"
-                    style="height: 90px; margin-bottom: 30px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
+                    style="height: 90px; margin-top: 20px; margin-bottom: 20px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
                     <span class="white-text"
-                        style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">MY CLASSES</span>
+                        style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">MY
+                        CLASSES</span>
                 </div>
                 <div class="card center-align"
-                    style="height: 600px; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 20px;">
-                    <div class="row">
+                    style="height: 600px; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
+                    <div class="row" style="margin: 0;">
                         <div class="col s12"
-                            style="font-family: roboto; margin-inline: auto; font-style: normal; display: flexbox; flex-wrap: wrap; top: 30px; padding: 20px;">
+                            style="font-family: roboto; margin-inline: auto; font-style: normal; display: flexbox; flex-wrap: wrap; top: 0; padding: 20px;">
                             <ul class="tabs" style="color: #4d0000; border-radius: 5px;">
                                 <li class="tab col s3"><a class="active" href="#enrolled">Enrolled</a></li>
                                 <li class="tab col s3"><a class="active" href="#completed">Completed</a></li>
@@ -136,9 +143,8 @@
                     </div>
                 </div>
             </div>
-            <!--Right Side-->
-            <div></div>
-            <div class="col s2 right" style="width: 17vw; margin: 0;">
+            <!--Right Content-->
+            <div class="col s2 right" style="width: 17vw;  margin-top: 30px;">
                 <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
                 </div>
                 <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
@@ -148,7 +154,7 @@
     </div>
 
     <!--Footer-->
-    <footer class="page-footer" style="background-color: #65122D; padding-top: 0%;">
+    <footer class="page-footer" style="background-color: #4d0000; padding-top: 0%;">
         <div class="footer-copyright ">
             <div class="col 1"
                 style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-left: 10px;">
