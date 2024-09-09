@@ -19,45 +19,95 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="nav-wrapper white" style="position: fixed; top: 0;
-    z-index: 1000;">
+    <nav class="nav-wrapper white" style="position: fixed; top: 0; z-index: 1000;">
         <img src="assets/svcc.ico" class="brand-logo left" style="height: 50px; top: 5px; margin-left: 5px;" alt="">
-        <a href="#!" class="brand-logo left"
+        <a href="main.html" class="brand-logo left"
             style="color:#4d0000; font-size: x-large; font-weight: bold; font-family: serif; margin-left: 65px;">ST.
             VINCENT COLLEGE OF CABUYAO</a>
-
         <form class="right"
-            style="margin-right: 30px; margin-top: 10px; height: 50px; width: 300px; background-color: #4d0000c4; border-radius: 20px; margin: 10px;">
+            style="margin-right: 35px; margin-top: 10px; height:45px; width: 280px; border: 2px solid #4d0000;;">
             <div class="input-field">
                 <input id="search" type="search" required placeholder="Search">
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
+                <label class="label-icon" for="search">
+                    <i class="material-icons" style="color: #4d0000; margin-top: -7px; font-size: 30px;">search</i>
+                </label>
+                <i class="material-icons" style="color: #4d0000; margin-top: -7px; font-size: 18px;">close</i>
             </div>
+        </form>
     </nav>
     <nav class="nav-content" style="background-color:#4d0000; position: fixed; top: 60px; z-index: 999;">
         <span class="nav-title left"
-            style="color: #DACC4B; padding-top: 3px; margin-left: 10px; font-family: Arial;  font-weight: bold; font-style: normal; font-size: 1.5rem;">SVCC</span>
+            style="color: #DACC4B; padding-top: 3px; margin-left: 10px; font-family: Arial; font-weight: bold; font-style: normal; font-size: 1.5rem;">SVCC</span>
         <ul class="right" style="padding-top: 6px; margin-right: 20px;">
+            <!-- Notifications Dropdown -->
             <li>
-                <a href="#" class="href">
+                <a class='dropdown-trigger' href='#' data-target='notificationsDropdown'>
                     <i class="material-icons" style="font-style: normal;">notifications</i>
                 </a>
+                <ul id='notificationsDropdown' class='dropdown-content'>
+                    <li><a href="#!" style="color:#4d0000; margin-top: 5px;">Notification 1</a>
+                        <hr>
+                    </li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 2</a>
+                        <hr>
+                    </li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 3</a>
+                        <hr>
+                    </li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!" style="color:#4d0000; text-align: center;">See all Notifications</a></li>
+                </ul>
             </li>
+            <!-- Messages Dropdown -->
             <li>
-                <a href="#" class="href">
+                <a class='dropdown-trigger' href='#' data-target='messagesDropdown'>
                     <i class="material-icons" style="font-style: normal;">message</i>
                 </a>
+                <ul id='messagesDropdown' class='dropdown-content'>
+                    <li><a href="#!" style="color:#4d0000;">Message 1</a>
+                        <hr>
+                    </li>
+                    <li><a href="#!" style="color:#4d0000;">Message 2</a>
+                        <hr>
+                    </li>
+                    <li><a href="#!" style="color:#4d0000;">Message 3</a>
+                        <hr>
+                    </li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!" style="color:#4d0000; text-align:center;">See all Messages</a></li>
+                </ul>
             </li>
+            <!-- Help Dropdown -->
             <li>
-                <a href="#" class="href">
+                <a class='dropdown-trigger' href='#' data-target='helpDropdown'>
                     <i class="material-icons" style="font-style: normal;">help</i>
                 </a>
+                <ul id='helpDropdown' class='dropdown-content'>
+                    <li><a href="#!" style="color:#4d0000;">How to Access LMS</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Navigating the LMS Dashboard</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Submitting Assignments</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Tracking Your Grades</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Communicating with Instructors</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!" style="color:#4d0000;">See all Help Topics</a></li>
+                </ul>
             </li>
-
+            <!-- Brightness Icon -->
             <li>
                 <a href="#" class="href" style="margin-left: 40px;">
                     <i class="material-icons" style="font-style: normal;">brightness_medium</i>
                 </a>
+            </li>
+            <!-- Account Dropdown -->
+            <li>
+                <a class='dropdown-trigger' href='#' data-target='accountDropdown'>
+                    <i class="material-icons">account_circle</i>
+                </a>
+                <ul id='accountDropdown' class='dropdown-content'>
+                    <li><a href="#!" style="color:#4d0000;">Profile</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Settings</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Logout</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -175,6 +225,14 @@
     <script>
         $(document).ready(function() {
             $('.tabs').tabs();
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems, {
+                closeOnClick: true,
+                hover: false
+            });
         });
     </script>
 </body>
