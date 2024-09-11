@@ -165,7 +165,7 @@
             </div>
 
             <!--Main Content-->
-            <div class="col s8" style="width: 55rem; margin-inline: auto;  margin-left: 300px;">
+            <div class="col s7" style="height: auto; margin-inline: auto;  margin-left: 300px;">
                 <div class="card-panel center-align"
                     style="height: 90px; margin-top: 20px; margin-bottom: 20px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
                     <span class="white-text"
@@ -173,8 +173,41 @@
                         GROUPS</span>
                 </div>
                 <div class="card center-align"
-                    style="height: 600px; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
+                    style="height: 80vh; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
+                    <a href="#addGroupModal" class="btn-floating btn-flat waves-effect waves-light ready right modal-trigger" style="margin-top: 0; margin-right: 20px; background-color: #DACC4B;">
+                        <i class="material-icons">add</i>
+                    </a>
                     <div class="row" style="margin: 0;">
+                        <div class="col s12 m12"></div>
+                        <div class="col s12 m4">
+                            <div class="card"
+                                style="border-radius: 15px;">
+                              <div class="card-image">
+                                <img src="https://picsum.photos/150/50" alt="Group Image">
+                                <span class="card-title">Group #</span>
+                              </div>
+                              <div class="card-content">
+                                <p>Group for Project Collaboration and Discussion.</p>
+                              </div>
+                              <div class="card-action">
+                                <a href="#groupChatModal" class="modal-trigger" style="margin: 0;">View Group</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col s12 m4">
+                            <div class="card">
+                              <div class="card-image">
+                                <img src="https://picsum.photos/150/50" alt="Group Image">
+                                <span class="card-title">Group #</span>
+                              </div>
+                              <div class="card-content">
+                                <p>Group for Project Collaboration and Discussion.</p>
+                              </div>
+                              <div class="card-action">
+                                <a href="#groupChatModal" class="modal-trigger"style="margin: 0;">View Group</a>
+                              </div>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -187,6 +220,43 @@
             </div>
         </div>
     </div>
+
+    <div id="addGroupModal" class="modal" style="width: 40%; height: 40%;">
+        <div class="modal-content center-align">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat right">Close Chat</a>
+            <form>
+            <h4>Add New Group</h4>
+                <div class="input-field">
+                    <input id="group_id" type="number" class="validate" placeholder="Enter your group id">
+                    <label for="group_id">Enter your group id</label>
+                </div>
+            </form>
+            <a href="#" class="btn-small waves-effect waves-light " style="background-color: #4d0000;"><i class="material-icons left">add_box</i>Add</a>
+        </div>
+    </div>
+
+    <div id="groupChatModal" class="modal" style="width: 40%; height: 50%; border-radius: 5px;">
+        <div class="modal-content">
+            <a href="#" class="modal-close waves-effect waves-green btn-flat right">Close Chat</a>
+            <a href="#" class=" btn-small waves-effect waves-light ready right modal-trigger"
+                        style="background-color: #DACC4B;">
+                <i class="material-icons left">add_box</i>Add people
+            </a>
+            <h4>Group Chat</h4>
+            <div class="chat-window" style="height: 60vh; overflow-y: scroll; border: 1px solid #ddd; padding: 10px;">
+                <!-- Chat messages will appear here -->
+                <p><strong>Klein:</strong> Hello, team!</p>
+                <p><strong>Morb:</strong> Hi Klein, let's get started on the project.</p>
+            </div>
+            <div class="input-field">
+                <input id="chat_message" type="text" class="validate" placeholder="Type a message...">
+                <a href="#!" class="btn" style="margin-top: 10px;">Send</a>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!--Footer-->
     <footer class="page-footer" style="background-color: #4d0000; padding-top: 0%;">
@@ -214,6 +284,8 @@
                 closeOnClick: true,
                 hover: false
             });
+            var modal = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(modal);
         });
     </script>
 </body>
