@@ -172,8 +172,7 @@
                         style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">MY
                         GROUPS</span>
                 </div>
-                <div class="card center-align"
-                    style="height: 80vh; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
+                <div class="card center-align" style="height: 80vh; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
                     <a href="#addGroupModal" class="btn-floating btn-flat waves-effect waves-light ready right modal-trigger" style="margin-top: 0; margin-right: 20px; background-color: #DACC4B;">
                         <i class="material-icons">add</i>
                     </a>
@@ -223,12 +222,14 @@
 
     <div id="addGroupModal" class="modal" style="width: 40%; height: 40%;">
         <div class="modal-content center-align">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat right">Close Chat</a>
+            <div style="display: flex; justify-content: center; align-items: center; position: relative;">
+                <h4 style="text-align: center; margin: 0;">Add New Group</h4>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" style="position: absolute; right: 0;">Close Chat</a>
+            </div>
             <form>
-            <h4>Add New Group</h4>
                 <div class="input-field">
                     <input id="group_id" type="number" class="validate" placeholder="Enter your group id">
-                    <label for="group_id">Enter your group id</label>
+                    <label for="group_id"></label>
                 </div>
             </form>
             <a href="#" class="btn-small waves-effect waves-light " style="background-color: #4d0000;"><i class="material-icons left">add_box</i>Add</a>

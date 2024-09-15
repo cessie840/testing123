@@ -162,17 +162,97 @@
             </div>
 
             <!--Main Content-->
-            <div class="col s8" style="width: 55rem; margin-inline: auto;  margin-left: 300px;">
+            <div class="col s7" style="height: auto; margin-inline: auto;  margin-left: 300px;">
                 <div class="card-panel center-align"
                     style="height: 90px; margin-top: 20px; margin-bottom: 20px; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px;">
                     <span class="white-text"
                         style="font-family: Arial;font-weight: bold; font-style: normal; letter-spacing: 5px; font-size: 4vh;">LOCKER</span>
                 </div>
-                <div class="card center-align"
-                    style="height: 600px; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
-                    <div class="row" style="margin: 0;">
+
+                <div class="card center-align" style="height: 80vh; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
+                    <div class="row" style="margin: auto;">
+                        <div class="col s12 m6">
+                            <input type="text" placeholder="Search files..." class="browser-default" style="margin-bottom: 20px;">
+                        </div>
+                        <div class="col s12 m6 right-align">
+                            <a class="waves-effect waves-light btn" style="background-color: #DACC4B;">Upload File</a>
+                        </div>
+                    </div>
+    
+                    <div class="row" style="margin-top: 12px;">
+                        <div class="col s12">
+                            <select class="browser-default">
+                                <option value="" disabled selected>Filter by</option>
+                                <option value="1">All</option>
+                                <option value="2">Files</option>
+                                <option value="3">Folders</option>
+                                <option value="4">Web Resources</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="card" style="height: auto; width: 100%; margin: auto; background-color: white; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 20px;">
+                    <div class="row" style="margin: auto;">
+                        <!-- 1 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">insert_drive_file</i>
+                                <p>File</p>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#downloadModal" style="background-color: #4d0000;">Download</a>
+                            </div>
+                        </div>
+    
+                        <!-- 2 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">folder</i>
+                                <p>Folders</p>
+                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Open</a>
+                            </div>
+                        </div>
+    
+                        <!-- 3 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">link</i>
+                                <p>Research Resource</p>
+                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row" style="margin: auto;">
+                        <!-- 4 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">insert_drive_file</i>
+                                <p>Page</p>
+                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Download</a>
+                            </div>
+                        </div>
+    
+                        <!-- 5 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">folder</i>
+                                <p>Lecture Notes</p>
+                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Open</a>
+                            </div>
+                        </div>
+    
+                        <!-- 6 -->
+                        <div class="col s12 m4">
+                            <div class="card-panel center-align">
+                                <i class="material-icons large" style="color: #4d0000;">link</i>
+                                <p>Course Resources</p>
+                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+            </div>
+
             </div>
             <!--Right Content-->
             <div class="col s2 right" style="width: 17vw;  margin-top: 30px;">
@@ -181,6 +261,50 @@
                 <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="downloadModal" class="modal">
+        <div class="modal-content">
+            <h4>Download File</h4>
+            <p>Are you sure you want to download this file?</p>
+            <ul>
+                <li><strong>File Name:</strong> Document1.docx</li>
+                <li><strong>Size:</strong> 2.5 MB</li>
+                <li><strong>Type:</strong> Word Document</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="download/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Download</a>
+        </div>
+    </div>
+
+    <div id="openModal" class="modal">
+        <div class="modal-content">
+            <h4>File Preview</h4>
+            <!-- File Preview (For example, PDF or Image) -->
+            <embed src="path/to/file.pdf" width="100%" height="400px" type="application/pdf">
+            <!-- Alternatively for images: -->
+            <!-- <img src="path/to/image.jpg" class="responsive-img"> -->
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="open/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Open File</a>
+        </div>
+    </div>
+
+    <div id="visitModal" class="modal">
+        <div class="modal-content">
+            <h4>Visit Web Resource</h4>
+            <p>You are about to leave the LMS and visit an external website:</p>
+            <ul>
+                <li><strong>Link:</strong> <a href="https://example.com" target="_blank">https://example.com</a></li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="https://example.com" target="_blank" class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
         </div>
     </div>
 
@@ -207,6 +331,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.dropdown-trigger');
             var instances = M.Dropdown.init(elems, { closeOnClick: true, hover: false });
+
+            var modal = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(modal);
         });
 
         $(document).ready(function() {
