@@ -207,7 +207,7 @@
                             <div class="card-panel center-align">
                                 <i class="material-icons large" style="color: #4d0000;">folder</i>
                                 <p>Folders</p>
-                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Open</a>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#openModal" style="background-color: #4d0000;">Open</a>
                             </div>
                         </div>
     
@@ -216,39 +216,11 @@
                             <div class="card-panel center-align">
                                 <i class="material-icons large" style="color: #4d0000;">link</i>
                                 <p>Research Resource</p>
-                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#visitModal" style="background-color: #4d0000;">Visit</a>
                             </div>
                         </div>
                     </div>
     
-                    <div class="row" style="margin: auto;">
-                        <!-- 4 -->
-                        <div class="col s12 m4">
-                            <div class="card-panel center-align">
-                                <i class="material-icons large" style="color: #4d0000;">insert_drive_file</i>
-                                <p>Page</p>
-                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Download</a>
-                            </div>
-                        </div>
-    
-                        <!-- 5 -->
-                        <div class="col s12 m4">
-                            <div class="card-panel center-align">
-                                <i class="material-icons large" style="color: #4d0000;">folder</i>
-                                <p>Lecture Notes</p>
-                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Open</a>
-                            </div>
-                        </div>
-    
-                        <!-- 6 -->
-                        <div class="col s12 m4">
-                            <div class="card-panel center-align">
-                                <i class="material-icons large" style="color: #4d0000;">link</i>
-                                <p>Course Resources</p>
-                                <a class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
             </div>
@@ -266,13 +238,23 @@
 
     <div id="downloadModal" class="modal">
         <div class="modal-content">
-            <h4>Download File</h4>
-            <p>Are you sure you want to download this file?</p>
+            <h4>Manage File</h4>
             <ul>
-                <li><strong>File Name:</strong> Document1.docx</li>
+                <li><strong>File Name:</strong> <span id="fileName">Document1.docx</span></li>
                 <li><strong>Size:</strong> 2.5 MB</li>
                 <li><strong>Type:</strong> Word Document</li>
             </ul>
+    
+            <div class="crud-options">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #DACC4B;" onclick="editFile()">Edit Metadata</a>
+                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+            </div>
+    
+            <div id="renameSection" style="display: none; margin-top: 20px;">
+                <input type="text" id="newFileName" placeholder="Enter new file name">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -282,11 +264,18 @@
 
     <div id="openModal" class="modal">
         <div class="modal-content">
-            <h4>File Preview</h4>
-            <!-- File Preview (For example, PDF or Image) -->
+            <h4>Manage File</h4>
             <embed src="path/to/file.pdf" width="100%" height="400px" type="application/pdf">
-            <!-- Alternatively for images: -->
-            <!-- <img src="path/to/image.jpg" class="responsive-img"> -->
+    
+            <div class="crud-options">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
+                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+            </div>
+    
+            <div id="renameSection" style="display: none; margin-top: 20px;">
+                <input type="text" id="newFileName" placeholder="Enter new file name">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
@@ -296,15 +285,29 @@
 
     <div id="visitModal" class="modal">
         <div class="modal-content">
-            <h4>Visit Web Resource</h4>
-            <p>You are about to leave the LMS and visit an external website:</p>
-            <ul>
-                <li><strong>Link:</strong> <a href="https://example.com" target="_blank">https://example.com</a></li>
+            <h4>Manage Web Resources</h4>
+            <p>Select a link to visit, delete, or add new:</p>
+    
+            <ul id="linkList" style="">
+                <li style="margin: 12px;">
+                    <span style="font-weight: bold;">Link 1:</span> 
+                    <a href="https://imissmycafe.com/" target="_blank">https://imissmycafe.com/</a>
+                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
+                </li>
+                <li style="margin: 12px;">
+                    <span style="font-weight: bold;">Link 2:</span> 
+                    <a href="https://imisstheoffice.eu/" target="_blank">https://imisstheoffice.eu/</a>
+                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
+                </li>
             </ul>
+    
+            <div id="addLinkSection" style="margin-top: 20px;">
+                <input type="text" id="newLink" placeholder="Enter new link">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="addNewLink()">Add Link</a>
+            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-            <a href="https://example.com" target="_blank" class="waves-effect waves-light btn" style="background-color: #4d0000;">Visit</a>
         </div>
     </div>
 
