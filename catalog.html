@@ -174,18 +174,19 @@
                     </a>
                     <div class="row" style="margin: 0;">
                         <div class="col s12 m12"></div>
+
                         <div class="col s12 m6">
                             <div class="card"
                                 style="border-radius: 15px;">
                               <div class="card-image">
                                 <img src="https://picsum.photos/150/50" alt="Group Image">
-                                <span class="card-title">Class#</span>
+                                <span class="card-title">Class 1</span>
                               </div>
                               <div class="card-content">
                                 <p>Class Description</p>
                               </div>
                               <div class="card-action">
-                                <a href="#" class="modal-trigger" style="margin: 0;">View Class</a>
+                                <a href="#class1Modal" class="modal-trigger" style="margin: 0;">View Class</a>
                               </div>
                             </div>
                         </div>
@@ -194,13 +195,13 @@
                                 style="border-radius: 15px;">
                               <div class="card-image">
                                 <img src="https://picsum.photos/150/50" alt="Group Image">
-                                <span class="card-title">Class#</span>
+                                <span class="card-title">Class 2</span>
                               </div>
                               <div class="card-content">
                                 <p>Class Description</p>
                               </div>
                               <div class="card-action">
-                                <a href="#" class="modal-trigger" style="margin: 0;">View Class</a>
+                                <a href="#class2Modal" class="modal-trigger" style="margin: 0;">View Class</a>
                               </div>
                             </div>
                         </div>
@@ -209,13 +210,13 @@
                                 style="border-radius: 15px;">
                               <div class="card-image">
                                 <img src="https://picsum.photos/150/50" alt="Group Image">
-                                <span class="card-title">Class#</span>
+                                <span class="card-title">Class 3</span>
                               </div>
                               <div class="card-content">
                                 <p>Class Description</p>
                               </div>
                               <div class="card-action">
-                                <a href="#" class="modal-trigger" style="margin: 0;">View Class</a>
+                                <a href="#class3Modal" class="modal-trigger" style="margin: 0;">View Class</a>
                               </div>
                             </div>
                         </div>
@@ -224,13 +225,13 @@
                                 style="border-radius: 15px;">
                               <div class="card-image">
                                 <img src="https://picsum.photos/150/50" alt="Group Image">
-                                <span class="card-title">Class#</span>
+                                <span class="card-title">Class 4</span>
                               </div>
                               <div class="card-content">
                                 <p>Class Description</p>
                               </div>
                               <div class="card-action">
-                                <a href="#" class="modal-trigger" style="margin: 0;">View Class</a>
+                                <a href="#class4Modal" class="modal-trigger" style="margin: 0;">View Class</a>
                               </div>
                             </div>
                         </div>
@@ -247,6 +248,66 @@
                 <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="class1Modal" class="modal">
+        <div class="modal-content">
+            <h4>Class 101: System Integration & Architecture</h4>
+            <p>This course covers the methodologies and tools for designing and integrating complex systems, focusing on enterprise architecture and system interoperability.</p>
+            <ul>
+                <li><strong>Duration:</strong> 12 weeks</li>
+                <li><strong>Instructor:</strong> Dr. John Doe</li>
+                <li><strong>Schedule:</strong> Mon & Wed, 10:00 AM - 12:00 PM</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="class2Modal" class="modal">
+        <div class="modal-content">
+            <h4>Class 102: Object-Oriented Programming</h4>
+            <p>Focuses on the principles of object-oriented design and programming, emphasizing encapsulation, inheritance, and polymorphism with practical implementation.</p>
+            <ul>
+                <li><strong>Duration:</strong> 8 weeks</li>
+                <li><strong>Instructor:</strong> Prof. Emily Green</li>
+                <li><strong>Schedule:</strong> Fri, 9:00 AM - 12:00 PM</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="class3Modal" class="modal">
+        <div class="modal-content">
+            <h4>Class 103: Human-Computer Interaction 1</h4>
+            <p>An introductory course on HCI, focusing on user-centered design, usability testing, and the interaction between humans and digital interfaces.</p>
+            <ul>
+                <li><strong>Duration:</strong> 10 weeks</li>
+                <li><strong>Instructor:</strong> Jane Smith</li>
+                <li><strong>Schedule:</strong> Tue & Thu, 1:00 PM - 3:00 PM</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="class4Modal" class="modal">
+        <div class="modal-content">
+            <h4>Class 104: Data Structures & Algorithms</h4>
+            <p>This course covers foundational data structures and algorithms, with a focus on computational efficiency, sorting, searching, and complexity analysis.</p>
+            <ul>
+                <li><strong>Duration:</strong> 12 weeks</li>
+                <li><strong>Instructor:</strong> Dr. John Doe</li>
+                <li><strong>Schedule:</strong> Mon & Wed, 2:00 PM - 4:00 PM</li>
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
 
@@ -273,6 +334,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.dropdown-trigger');
             var instances = M.Dropdown.init(elems, { closeOnClick: true, hover: false });
+
+            var modal = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(modal);
         });
 
         $(document).ready(function() {
