@@ -227,10 +227,52 @@
 
             </div>
             <!--Right Content-->
-            <div class="col s2 right" style="width: 17vw;  margin-top: 30px;">
-                <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
+            <div class="col s2 m3 right" style="width: 30vh; margin-right: 20px;">
+                <div class="card-panel white"
+                    style="height: 250px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); float: right;">
+                    <div class="plus-sign-container center-align">
+                        <!-- Add Button (Plus Sign) at the top -->
+                        <a class="btn-floating" onclick="openModal()" style="background-color: #4d0000;">
+                            <i class="material-icons" style="font-size: 25px; margin-top: -5px;">add</i>
+                        </a>
+                    </div>
+                    <h6 class="center-align"
+                        style="color: #4d0000; font-weight: bold; margin-top: -23px; margin-left: -130px;">ACTIVITY
+                        LIST:</h6>
+                    <br>
+                    <div class="divider"></div>
+
+                    <ul class="activity" style="background-color: #4d00003f;">
+                        <li>Activity 1</li>
+                        <div class="divider"></div>
+                        <li>Activity 2</li>
+                        <div class="divider"></div>
+                        <li>Activity 3</li>
+                        <div class="divider"></div>
+                    </ul>
                 </div>
-                <div class="card-panel white" style="height: 300px; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);">
+
+                <div class="calendar" id="calendar">
+                    <div class="calendar-header">
+                        <span id="calendar-month-year"></span>
+                    </div>
+                    <div class="calendar-body" id="calendar-body">
+
+                    </div>
+                </div>
+
+                <div id="activity-modal" class="modal" style="width: 400px; height: 180px; margin-top: 250px; float: right;">
+                    <div class="modal-content">
+                        <h4 style="font-size: 20px;">Add new activity</h4>
+                        <div class="input-field">
+                            <input type="text" id="modal-activity" placeholder="Enter your activity" />
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="margin-top: -40px;">
+                        <a href="#!" class="modal-close btn-flat"
+                            style="color: white; background-color: #4d0000; margin-right: 10px;"
+                            onclick="addActivity()">Add</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -342,6 +384,99 @@
         $(document).ready(function() {
             $('.tabs').tabs();
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.dropdown-trigger');
+                var instances = M.Dropdown.init(elems, {
+                    closeOnClick: true,
+                    hover: false
+                });
+            });
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true
+            });
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems);
+            });
+
+            // Open the modal when clicking the plus sign
+            function openModal() {
+                var instance = M.Modal.getInstance(document.getElementById('activity-modal'));
+                instance.open();
+            }
+
+            // Function to add activity from modal input to the activity list
+            function addActivity() {
+                // Get the new activity from the modal input field
+                var activity = document.getElementById("modal-activity").value;
+
+                // Check if the input is not empty
+                if (activity.trim() !== "") {
+                    // Create a new list item element
+                    var li = document.createElement("li");
+
+                    // Set the text of the list item to the input value
+                    li.textContent = activity;
+
+                    // Append the new list item to the activity list
+                    document.getElementById("activity-list").appendChild(li);
+
+                    // Clear the input field after adding the activity
+                    document.getElementById("modal-activity").value = "";
+
+                    // Close the modal
+                    var instance = M.Modal.getInstance(document.getElementById('activity-modal'));
+                    instance.close();
+                }
+            }
+
+            function generateCalendar(year, month) {
+                const monthNames = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+                // Set current date
+                const currentDate = new Date();
+
+                // Set month and year
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+
+                // Get the first day of the month and the number of days in the month
+                const firstDayOfWeek = firstDay.getDay();
+                const totalDays = lastDay.getDate();
+
+                // Generate the calendar HTML
+                let calendarHTML = days.map(day => `<div class="day">${day}</div>`).join('');
+                for (let i = 0; i < firstDayOfWeek; i++) {
+                    calendarHTML += `<div></div>`;
+                }
+                for (let date = 1; date <= totalDays; date++) {
+                    const isToday = date === currentDate.getDate() && month === currentDate.getMonth() && year ===
+                        currentDate.getFullYear();
+                    calendarHTML += `<div class="date${isToday ? ' today' : ''}">${date}</div>`;
+                }
+
+                // Set month and year
+                document.getElementById('calendar-month-year').innerText = `${monthNames[month]} ${year}`;
+                document.getElementById('calendar-body').innerHTML = calendarHTML;
+            }
+
+            // Get current date
+            const today = new Date();
+            generateCalendar(today.getFullYear(), today.getMonth());
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.carousel');
+                var instances = M.Carousel.init(elems, {
+                    fullWidth: true,
+                    indicators: true
+                });
+            });
     </script>
 </body>
 
