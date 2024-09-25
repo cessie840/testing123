@@ -288,14 +288,14 @@
             </ul>
     
             <div class="crud-options">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #DACC4B;" onclick="editFile()">Edit Metadata</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="downEditFile()">Edit</a>
+                
             </div>
     
-            <div id="renameSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter new file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            <div id="downEditSection" style="display: none; margin-top: 20px;">
+                <input type="text" id="newFileName" placeholder="Enter file name">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewDownload()">Save</a>
+                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
             </div>
         </div>
         <div class="modal-footer">
@@ -310,18 +310,19 @@
             <embed src="path/to/file.pdf" width="100%" height="400px" type="application/pdf">
     
             <div class="crud-options">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="openEditFile()">Edit</a>
+                
             </div>
     
-            <div id="renameSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter new file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            <div id="openEditSection" style="display: none; margin-top: 20px;">
+                <input type="text" id="newFileName" placeholder="Enter file name">
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewOpen()">Save</a>
+                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-            <a href="open/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Open File</a>
+            <a href="open/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Open Folder</a>
         </div>
     </div>
 
@@ -330,7 +331,7 @@
             <h4>Manage Web Resources</h4>
             <p>Select a link to visit, delete, or add new:</p>
     
-            <ul id="linkList" style="">
+            <ul id="linkList">
                 <li style="margin: 12px;">
                     <span style="font-weight: bold;">Link 1:</span> 
                     <a href="https://web.nlp.gov.ph/nlp/?q=node%2F10448" target="_blank">National Library</a>
@@ -477,6 +478,49 @@
                     indicators: true
                 });
             });
+
+
+            let files = JSON.parse(localStorage.getItem('files')) || [];
+            let folders = JSON.parse(localStorage.getItem('folders')) || [];    
+
+            function downEditFile() {
+                document.getElementById('downEditSection').style.display = 'block';
+            }
+            function openEditFile() {
+                document.getElementById('openEditSection').style.display = 'block';
+            }
+
+            // function saveNewDownload() {
+            //     let newDownload = document.getElementById('newDownloadFileName').value;
+            //     if (newDownload) {
+            //         document.getElementById('downloadFileName').textContent = newDownload;
+            //         updateFileNameInStorage(newDownload, 'download');
+            //         document.getElementById('downEditSection').style.display = 'none';
+            //     }
+            // }
+
+            // function saveNewOpen() {
+            //     let newOpen = document.getElementById('newOpenFileName').value;
+            //     if (newOpen) {
+            //         document.getElementById('downloadFileName').textContent = newOpen;
+            //         updateFileNameInStorage(newOpen, 'open');
+            //         document.getElementById('openEditSection').style.display = 'none'; // Hide after saving
+            //     }
+            // }
+
+            // function updateFileNameInStorage(newFile, type) {
+            //     let itemIndex = type === 'download' ? 0 : 1; 
+
+            //     if (type === 'download') {
+            //         files[itemIndex].name = newFile;
+            //     } else if (type === 'open') {
+            //         folders[itemIndex].name = newFile;
+            //     }
+
+            //     localStorage.setItem('files', JSON.stringify(files));
+            //     localStorage.setItem('folders', JSON.stringify(folders));
+            // }
+
     </script>
 </body>
 
