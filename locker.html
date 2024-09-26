@@ -174,26 +174,6 @@
                 </div>
 
                 <div class="card center-align" style="height: 80vh; width: 100%; margin: auto; background-color: #4d0000; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 10px;">
-                    <div class="row" style="margin: auto;">
-                        <div class="col s12 m6">
-                            <input type="text" placeholder="Search files..." class="browser-default" style="margin-bottom: 20px;">
-                        </div>
-                        <div class="col s12 m6 right-align">
-                            <a class="waves-effect waves-light btn" style="background-color: #DACC4B;">Upload File</a>
-                        </div>
-                    </div>
-    
-                    <div class="row" style="margin-top: 12px;">
-                        <div class="col s12">
-                            <select class="browser-default">
-                                <option value="" disabled selected>Filter by</option>
-                                <option value="1">All</option>
-                                <option value="2">Files</option>
-                                <option value="3">Folders</option>
-                                <option value="4">Web Resources</option>
-                            </select>
-                        </div>
-                    </div>
     
                     <div class="card" style="height: auto; width: 100%; margin: auto; background-color: white; box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45); border-radius: 5px; padding: 20px;">
                     <div class="row" style="margin: auto;">
@@ -568,38 +548,6 @@
                     alert("Please enter a folder name.");
                 }
             }
-
-
-            // function saveNewDownload() {
-            //     let newDownload = document.getElementById('newDownloadFileName').value;
-            //     if (newDownload) {
-            //         document.getElementById('downloadFileName').textContent = newDownload;
-            //         updateFileNameInStorage(newDownload, 'download');
-            //         document.getElementById('downEditSection').style.display = 'none';
-            //     }
-            // }
-
-            // function saveNewOpen() {
-            //     let newOpen = document.getElementById('newOpenFileName').value;
-            //     if (newOpen) {
-            //         document.getElementById('downloadFileName').textContent = newOpen;
-            //         updateFileNameInStorage(newOpen, 'open');
-            //         document.getElementById('openEditSection').style.display = 'none'; // Hide after saving
-            //     }
-            // }
-
-            // function updateFileNameInStorage(newFile, type) {
-            //     let itemIndex = type === 'download' ? 0 : 1; 
-
-            //     if (type === 'download') {
-            //         files[itemIndex].name = newFile;
-            //     } else if (type === 'open') {
-            //         folders[itemIndex].name = newFile;
-            //     }
-
-            //     localStorage.setItem('files', JSON.stringify(files));
-            //     localStorage.setItem('folders', JSON.stringify(folders));
-            // }
 
     </script>
 </body>
