@@ -41,16 +41,16 @@
                 <a class='dropdown-trigger' href='#' data-target='notificationsDropdown'>
                     <i class="material-icons" style="font-style: normal;">notifications</i>
                 </a>
-                <ul id='notificationsDropdown' class='dropdown-content'>
-                    <li><a href="#!" style="color:#4d0000; margin-top: 5px;">Notification 1</a>
-                        <hr>
-                    </li>
-                    <li><a href="#!" style="color:#4d0000;">Notification 2</a>
-                        <hr>
-                    </li>
-                    <li><a href="#!" style="color:#4d0000;">Notification 3</a>
-                        <hr>
-                    </li>
+                <ul id='notificationsDropdown' class='dropdown-content'  style="max-height: 258px; overflow-y: auto;">
+                    <li><a href="#!" style="color:#4d0000; margin-top: 5px;">Notification 1</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 2</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 3</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 4</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 5</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 6</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 7</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 8</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Notification 9</a><hr></li>
                     <li class="divider" tabindex="-1"></li>
                     <li><a href="#!" style="color:#4d0000; text-align: center;">See all Notifications</a></li>
                 </ul>
@@ -60,16 +60,12 @@
                 <a class='dropdown-trigger' href='#' data-target='messagesDropdown'>
                     <i class="material-icons" style="font-style: normal;">message</i>
                 </a>
-                <ul id='messagesDropdown' class='dropdown-content'>
-                    <li><a href="#!" style="color:#4d0000;">Message 1</a>
-                        <hr>
-                    </li>
-                    <li><a href="#!" style="color:#4d0000;">Message 2</a>
-                        <hr>
-                    </li>
-                    <li><a href="#!" style="color:#4d0000;">Message 3</a>
-                        <hr>
-                    </li>
+                <ul id='messagesDropdown' class='dropdown-content' style="max-height: 258px; overflow-y: auto;">
+                    <li><a href="#!" style="color:#4d0000;">Message 1</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Message 2</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Message 3</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Message 4</a><hr></li>
+                    <li><a href="#!" style="color:#4d0000;">Message 5</a><hr></li>
                     <li class="divider" tabindex="-1"></li>
                     <li><a href="#!" style="color:#4d0000; text-align:center;">See all Messages</a></li>
                 </ul>
@@ -79,12 +75,20 @@
                 <a class='dropdown-trigger' href='#' data-target='helpDropdown'>
                     <i class="material-icons" style="font-style: normal;">help</i>
                 </a>
-                <ul id='helpDropdown' class='dropdown-content'>
+                <ul id='helpDropdown' class='dropdown-content' style="width: 350px; max-height: 258px;">
                     <li><a href="#!" style="color:#4d0000;">How to Access LMS</a></li>
                     <li><a href="#!" style="color:#4d0000;">Navigating the LMS Dashboard</a></li>
                     <li><a href="#!" style="color:#4d0000;">Submitting Assignments</a></li>
                     <li><a href="#!" style="color:#4d0000;">Tracking Your Grades</a></li>
                     <li><a href="#!" style="color:#4d0000;">Communicating with Instructors</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Joining Online Classes</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Accessing Course Materials</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Participating in Discussion Forums</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Viewing Announcements</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Setting Up Notifications</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Using the LMS Mobile App</a></li>
+                    <li><a href="#!" style="color:#4d0000;">Technical Support and Troubleshooting</a></li>
+
                     <li class="divider" tabindex="-1"></li>
                     <li><a href="#!" style="color:#4d0000;">See all Help Topics</a></li>
                 </ul>
@@ -103,7 +107,7 @@
                 <ul id='accountDropdown' class='dropdown-content'>
                     <li><a href="#!" style="color:#4d0000;">Profile</a></li>
                     <li><a href="#!" style="color:#4d0000;">Settings</a></li>
-                    <li><a href="#!" style="color:#4d0000;">Logout</a></li>
+                    <li><a href="login.html" style="color:#4d0000;">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -282,71 +286,95 @@
         <div class="modal-content">
             <h4>Manage File</h4>
             <ul>
-                <li><strong>File Name:</strong> <span id="fileName">Document1.docx</span></li>
-                <li><strong>Size:</strong> 2.5 MB</li>
-                <li><strong>Type:</strong> Word Document</li>
+                <li><strong>File Name:</strong> Input File Name</li>
+                <li><strong>Type:</strong> Input File Type</li>
             </ul>
+
+            <table class="striped centered responsive-table" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be appended here -->
+                </tbody>
+            </table>
     
             <div class="crud-options">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #DACC4B;" onclick="editFile()">Edit Metadata</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="downEditFile()">Edit</a>
+                
             </div>
     
-            <div id="renameSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter new file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            <div id="downEditSection" style="display: none; margin-top: 20px;">
+                <div style="display: flex; justify-content:space-evenly;">
+                    <div class="input-field col s12">
+                        <input id="newFileName" type="text" placeholder="Enter File Name" style="width: 100%;">
+                        <label for="newFileName">File Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="newFileType" type="text" placeholder="Enter File Type" style="width: 100%;">
+                        <label for="newFileType">File Type</label>
+                    </div>
+                </div>
+                <a href="#" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="addFile()">Upload</a>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-            <a href="download/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Download</a>
         </div>
     </div>
 
     <div id="openModal" class="modal">
         <div class="modal-content">
             <h4>Manage File</h4>
-            <embed src="path/to/file.pdf" width="100%" height="400px" type="application/pdf">
+            
+            <table class="striped centered responsive-table" id="fileTable">
+                <thead>
+                    <tr>
+                        <th>Folder Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be appended here -->
+                </tbody>
+            </table>
     
             <div class="crud-options">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="renameFile()">Rename</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="openEditFile()">Edit</a>
             </div>
     
-            <div id="renameSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter new file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewFileName()">Save</a>
+            <div id="openEditSection" style="display: none; margin-top: 20px;">
+                <div style="display: flex; justify-content:space-evenly;">
+                    <div class="input-field col s12">
+                        <input id="newFolderName" type="text" placeholder="Enter File Name" style="width: 100%;">
+                        <label for="newFolderName">Folder Name</label>
+                    </div>
+                </div>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="createFolder()">Create</a>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-            <a href="open/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Open File</a>
         </div>
     </div>
 
     <div id="visitModal" class="modal">
         <div class="modal-content">
             <h4>Manage Web Resources</h4>
-            <p>Select a link to visit, delete, or add new:</p>
     
-            <ul id="linkList" style="">
+            <ul id="linkList">
                 <li style="margin: 12px;">
                     <span style="font-weight: bold;">Link 1:</span> 
                     <a href="https://web.nlp.gov.ph/nlp/?q=node%2F10448" target="_blank">National Library</a>
-                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
                 </li>
                 <li style="margin: 12px;">
                     <span style="font-weight: bold;">Link 2:</span> 
                     <a href="https://www.skillshare.com/en/" target="_blank">Skillshare</a>
-                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
                 </li>
             </ul>
     
-            <div id="addLinkSection" style="margin-top: 20px;">
-                <input type="text" id="newLink" placeholder="Enter new link">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="addNewLink()">Add Link</a>
-            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -477,6 +505,102 @@
                     indicators: true
                 });
             });
+
+
+            let files = JSON.parse(localStorage.getItem('files')) || [];
+            let folders = JSON.parse(localStorage.getItem('folders')) || [];    
+
+            function downEditFile() {
+                let downStatus = document.getElementById('downEditSection').style.display;    
+
+                if (downStatus === 'none' || downStatus === '') {
+                    document.getElementById('downEditSection').style.display = 'block';
+                } else {
+                    document.getElementById('downEditSection').style.display = 'none';
+                }
+
+            }
+            function openEditFile() {
+                let openStatus = document.getElementById('openEditSection').style.display;    
+
+                if (openStatus === 'none' || openStatus === '') {
+                    document.getElementById('openEditSection').style.display = 'block';
+                } else {
+                    document.getElementById('openEditSection').style.display = 'none';
+                }
+            }
+
+            function addFile() {
+                const fileName = document.getElementById('newFileName').value;
+                const fileType = document.getElementById('newFileType').value;
+                const dataTableBody = document.querySelector('#dataTable tbody');
+
+                if (fileName && fileType) {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${fileName}</td>
+                        <td>${fileType}</td>
+                    `;
+                    dataTableBody.appendChild(newRow);
+
+                    // Clear input fields
+                    document.getElementById('newFileName').value = '';
+                    document.getElementById('newFileType').value = '';
+                } else {
+                    alert("Please enter both file name and type.");
+                }
+            }
+
+            function createFolder() {
+                const folderName = document.getElementById('newFolderName').value;
+                const fileTableBody = document.querySelector('#fileTable tbody');
+
+                if (folderName) {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${folderName}</td>
+                    `;
+                    fileTableBody.appendChild(newRow);
+
+                    // Clear input field
+                    document.getElementById('newFolderName').value = '';
+                } else {
+                    alert("Please enter a folder name.");
+                }
+            }
+
+
+            // function saveNewDownload() {
+            //     let newDownload = document.getElementById('newDownloadFileName').value;
+            //     if (newDownload) {
+            //         document.getElementById('downloadFileName').textContent = newDownload;
+            //         updateFileNameInStorage(newDownload, 'download');
+            //         document.getElementById('downEditSection').style.display = 'none';
+            //     }
+            // }
+
+            // function saveNewOpen() {
+            //     let newOpen = document.getElementById('newOpenFileName').value;
+            //     if (newOpen) {
+            //         document.getElementById('downloadFileName').textContent = newOpen;
+            //         updateFileNameInStorage(newOpen, 'open');
+            //         document.getElementById('openEditSection').style.display = 'none'; // Hide after saving
+            //     }
+            // }
+
+            // function updateFileNameInStorage(newFile, type) {
+            //     let itemIndex = type === 'download' ? 0 : 1; 
+
+            //     if (type === 'download') {
+            //         files[itemIndex].name = newFile;
+            //     } else if (type === 'open') {
+            //         folders[itemIndex].name = newFile;
+            //     }
+
+            //     localStorage.setItem('files', JSON.stringify(files));
+            //     localStorage.setItem('folders', JSON.stringify(folders));
+            // }
+
     </script>
 </body>
 
