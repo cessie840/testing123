@@ -33,38 +33,22 @@ body{
   }
 
 
-.main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 1200px; /* Ensure a max-width for larger screens */
-}
-
-.col.s8 {
-    left: 0;
-    width: 66.66%; /* 8 columns out of 12 (Materialize's grid system) */
-    float: left;
+.main{
+    height: 100%;
+    width: 100%;
+    display: flexbox;
+    flex-wrap: wrap;
+    margin-inline: auto;
 }
 
 .row {
     margin-top: 119px; 
-    width: 500px;
-}
-
-.row.col{
-    padding: 0;
-    margin-top: 0;
+    
 }
 
 .left-column{
-    position: fixed; /* Keep it fixed on large screens */
-    top: 60px; /* Adjust depending on your navbar height */
-    height: 100vh; /* Full viewport height */
-    width: 25%; /* 3 columns width (25%) */
-    background: rgba(255, 255, 255, 0.80); /* Background styling */
-    box-shadow: 3px 1px 18px 1px rgba(101,18,45,0.45); /* Shadow for the column */
-    padding: 20px;
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    position: fixed;
+    height: 120rem;
 }
 
 .container{
@@ -125,18 +109,18 @@ font-size: 14px; /* Font size */
 border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Border between items */
 display: flex; /* Flexbox for better alignment */
 align-items: center; /* Center items vertically */
-margin-top: 0;
 }
 
 .calendar {
-    width: 100%; /* Full width on all screens */
-    max-width: 400px; /* Set a max width for larger screens */
-    margin: 20px auto; /* Center the calendar */
-    margin-left: 15%;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    float: right;
+    margin-top: 5px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
+    width: 307px;
+    font-size: 12px;
+    background-color: #fff;
+    box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);
 }
 .calendar-header {
     background-color: #4d0000;
@@ -183,44 +167,12 @@ margin-top: 0;
 
 footer {
     position: fixed;
-    opacity: 100%;
     width: 100%;
     bottom: 0%;
-    left: 0;
 }
 
-
-/* Media query for screens smaller than 1024px */
-@media only screen and (max-width: 1024px) {
-    .col.s8 {
-        width: 100%; /* Full width for tablets */
-        margin-left: 0; /* Remove any unnecessary margins */
-        margin-right: 0;
-    }
-    .left-column {
-        position: relative; /* No longer fixed */
-        width: 33.33%; /* 4 columns width on tablets */
-        height: auto; /* Adjust height based on content */
-        margin-bottom: 20px; /* Add spacing between left column and main content */
-        padding: 10px; /* Add padding for spacing */
-    }
-}
-
-/* Media query for screens smaller than 768px (mobile devices) */
 @media only screen and (max-width: 768px) {
-    .col.s8 {
-        width: 100%; /* Full width on mobile */
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px; /* Add padding to prevent content from touching screen edges */
-    }
-    .left-column {
-        position: relative; /* No longer fixed */
-        width: 33.33%; /* 4 columns width on tablets */
-        height: auto; /* Adjust height based on content */
-        margin-bottom: 20px; /* Add spacing between left column and main content */
-        padding: 10px; /* Add padding for spacing */
-    }
+
     body{
         height: 160vh;
         width: 0;
@@ -232,31 +184,27 @@ footer {
     }
 }
 
-
   
 /*SUBJECT SLIDER*/ 
-.box{
-    max-height: 35vh;
-    left: 0;
-    margin-left: 0;
-}
-.slider-container {    
+.slider-container {
+            
     width: 100%;
-    max-width: 2400vh; 
+    max-width: 1200px; 
     overflow: hidden;   
     position: relative;
+  
   }
   
   .slider {
-    margin-left: 10px;
-    height: 40vh;
+  margin-left: 10px;
+      height: 49vh;
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 17px; 
   }
   
   .card {
-    height: 30vh;
+      height: 42vh;
     flex: 0 0 calc(25% - 5px); 
     padding: 10px;
     background-color: #ffffff;
@@ -266,13 +214,12 @@ footer {
     box-shadow: 1px 5px 9px 1px rgba(101,18,45,0.45);
   }
   
-  .card-img {
-    width: 60%;
-    height: 60%;
+  .card img {
+      
+    width: 100%;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
-    display: block;
-    grid-row: auto;
   }
   
   .card h2 {
@@ -310,12 +257,12 @@ footer {
   
   /*OVERVIEW FOR THREE SECTION*/
   .main-layout {
+      min-width: 1250px;
     display: flex;
-    flex-direction: row; /* On large screens */
-    flex-wrap: wrap; /* Wrap sections on smaller screens */
-    justify-content: space-between;
-}
-
+    justify-content: space-between; 
+    padding: 20px;
+    gap: 20px;  
+  }
   .section {
       min-width: 300px; 
     flex: 1; 
@@ -390,71 +337,18 @@ footer {
   
   .section p {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 300; /* Thin text */
     color: #666;
   }
   
   
   @media (max-width: 768px) {
     .main-layout {
-        flex-direction: column; 
+      flex-direction: column; /* Stack sections vertically */
     }
-
+    
     .section {
-        width: 100%; 
-        margin-bottom: 20px;
+      margin-bottom: 20px;
     }
   }
   
-  @media only screen and (max-width: 768px) {
-    body {
-        height: auto;
-        padding: 0 10px;
-    }
-
-    .main {
-        flex-direction: column; /* Stack elements vertically */
-        width: 100%; /* Take full width of the screen */
-        padding: 0; /* Remove padding */
-    }
-
-    .left-column {
-        position: relative; /* Make it scrollable instead of fixed on small screens */
-        height: auto; /* Let height adjust to content */
-        width: 100%; /* Take full width */
-        margin-bottom: 20px;
-    }
-
-    .right-column {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .carousel {
-        height: auto; /* Let the carousel adjust height dynamically */
-    }
-
-    .card {
-        flex: 0 0 100%; /* Make cards take full width on small screens */
-        margin-bottom: 10px;
-    }
-
-    .slider-container {
-        width: 100%; /* Ensure it adjusts properly on smaller screens */
-    }
-
-    .prev, .next {
-        display: none; /* Hide navigation buttons on small screens if needed */
-    }
-
-    .nav-content, .nav-wrapper {
-        position: static; /* Avoid overlap issues on small screens */
-    }
-    
-    /* Adjust footer */
-    footer {
-        position: static;
-        margin-top: 20px;
-        left: 0;
-    }
-}
