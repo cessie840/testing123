@@ -103,7 +103,7 @@
                 <ul id='accountDropdown' class='dropdown-content'>
                     <li><a href="#!" style="color:#4d0000;">Profile</a></li>
                     <li><a href="#!" style="color:#4d0000;">Settings</a></li>
-                    <li><a href="#!" style="color:#4d0000;">Logout</a></li>
+                    <li><a href="login.html" style="color:#4d0000;">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -282,10 +282,21 @@
         <div class="modal-content">
             <h4>Manage File</h4>
             <ul>
-                <li><strong>File Name:</strong> <span id="fileName">Document1.docx</span></li>
-                <li><strong>Size:</strong> 2.5 MB</li>
-                <li><strong>Type:</strong> Word Document</li>
+                <li><strong>File Name:</strong> Input File Name</li>
+                <li><strong>Type:</strong> Input File Type</li>
             </ul>
+
+            <table class="striped centered responsive-table" id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be appended here -->
+                </tbody>
+            </table>
     
             <div class="crud-options">
                 <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="downEditFile()">Edit</a>
@@ -293,61 +304,73 @@
             </div>
     
             <div id="downEditSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewDownload()">Save</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <div style="display: flex; justify-content:space-evenly;">
+                    <div class="input-field col s12">
+                        <input id="newFileName" type="text" placeholder="Enter File Name" style="width: 100%;">
+                        <label for="newFileName">File Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="newFileType" type="text" placeholder="Enter File Type" style="width: 100%;">
+                        <label for="newFileType">File Type</label>
+                    </div>
+                </div>
+                <a href="#" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="addFile()">Upload</a>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-            <a href="download/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Download</a>
         </div>
     </div>
 
     <div id="openModal" class="modal">
         <div class="modal-content">
             <h4>Manage File</h4>
-            <embed src="path/to/file.pdf" width="100%" height="400px" type="application/pdf">
+            
+            <table class="striped centered responsive-table" id="fileTable">
+                <thead>
+                    <tr>
+                        <th>Folder Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be appended here -->
+                </tbody>
+            </table>
     
             <div class="crud-options">
                 <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="openEditFile()">Edit</a>
-                
             </div>
     
             <div id="openEditSection" style="display: none; margin-top: 20px;">
-                <input type="text" id="newFileName" placeholder="Enter file name">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="saveNewOpen()">Save</a>
-                <a href="#!" class="waves-effect waves-light btn red" onclick="deleteFile()">Delete</a>
+                <div style="display: flex; justify-content:space-evenly;">
+                    <div class="input-field col s12">
+                        <input id="newFolderName" type="text" placeholder="Enter File Name" style="width: 100%;">
+                        <label for="newFolderName">Folder Name</label>
+                    </div>
+                </div>
+                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="createFolder()">Create</a>
             </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-            <a href="open/file/path" class="waves-effect waves-light btn" style="background-color: #4d0000;">Open Folder</a>
         </div>
     </div>
 
     <div id="visitModal" class="modal">
         <div class="modal-content">
             <h4>Manage Web Resources</h4>
-            <p>Select a link to visit, delete, or add new:</p>
     
             <ul id="linkList">
                 <li style="margin: 12px;">
                     <span style="font-weight: bold;">Link 1:</span> 
                     <a href="https://web.nlp.gov.ph/nlp/?q=node%2F10448" target="_blank">National Library</a>
-                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
                 </li>
                 <li style="margin: 12px;">
                     <span style="font-weight: bold;">Link 2:</span> 
                     <a href="https://www.skillshare.com/en/" target="_blank">Skillshare</a>
-                    <a href="#!" class="waves-effect waves-light btn-small red right" onclick="deleteLink(this)">Delete</a>
                 </li>
             </ul>
     
-            <div id="addLinkSection" style="margin-top: 20px;">
-                <input type="text" id="newLink" placeholder="Enter new link">
-                <a href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="addNewLink()">Add Link</a>
-            </div>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
@@ -484,11 +507,64 @@
             let folders = JSON.parse(localStorage.getItem('folders')) || [];    
 
             function downEditFile() {
-                document.getElementById('downEditSection').style.display = 'block';
+                let downStatus = document.getElementById('downEditSection').style.display;    
+
+                if (downStatus === 'none' || downStatus === '') {
+                    document.getElementById('downEditSection').style.display = 'block';
+                } else {
+                    document.getElementById('downEditSection').style.display = 'none';
+                }
+
             }
             function openEditFile() {
-                document.getElementById('openEditSection').style.display = 'block';
+                let openStatus = document.getElementById('openEditSection').style.display;    
+
+                if (openStatus === 'none' || openStatus === '') {
+                    document.getElementById('openEditSection').style.display = 'block';
+                } else {
+                    document.getElementById('openEditSection').style.display = 'none';
+                }
             }
+
+            function addFile() {
+                const fileName = document.getElementById('newFileName').value;
+                const fileType = document.getElementById('newFileType').value;
+                const dataTableBody = document.querySelector('#dataTable tbody');
+
+                if (fileName && fileType) {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${fileName}</td>
+                        <td>${fileType}</td>
+                    `;
+                    dataTableBody.appendChild(newRow);
+
+                    // Clear input fields
+                    document.getElementById('newFileName').value = '';
+                    document.getElementById('newFileType').value = '';
+                } else {
+                    alert("Please enter both file name and type.");
+                }
+            }
+
+            function createFolder() {
+                const folderName = document.getElementById('newFolderName').value;
+                const fileTableBody = document.querySelector('#fileTable tbody');
+
+                if (folderName) {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${folderName}</td>
+                    `;
+                    fileTableBody.appendChild(newRow);
+
+                    // Clear input field
+                    document.getElementById('newFolderName').value = '';
+                } else {
+                    alert("Please enter a folder name.");
+                }
+            }
+
 
             // function saveNewDownload() {
             //     let newDownload = document.getElementById('newDownloadFileName').value;
