@@ -12,24 +12,26 @@ body{
 }
 
 .dropdown-content {
-    top: -60px; 
-    left: -15px;
+    top: -73px; 
+          
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; border: 5px solid #4d0000;
 }
+  
+  #notificationsDropdown {
+    width: 340px !important;
+    left:1178px !important;
+  }
 
-#notificationsDropdown {
-    width: 305px !important;
-}
+  #messagesDropdown {
+    width: 340px !important;
+    left:1178px !important;
+  }
+  #helpDropdown {
+    width: 340px !important;
+    left:1178px !important;
+  }
 
-#messagesDropdown {
-    width: 305px !important;
-    left:1100px !important;
-}
-
-#helpDropdown {
-    width: 305px !important;
-    left:1100px !important;
-    
-}
 
 .main{
     height: 100%;

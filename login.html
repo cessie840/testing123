@@ -82,12 +82,30 @@
                     <input id="password" type="password" class="validate" required>
                     <label for="password">Password</label>
                 </div>
-                <a href="#" class="forgot-password">Forgot Password?</a>
+                <a href="#forgotPasswordModal" class="forgot-password modal-trigger">Forgot Password?</a>
                 <div class="center">
                     <button class="btn btn-custom waves-effect waves-light" type="submit">Login</button>
                 </div>
             </form>
             <p id="errorMsg" style="color: red;"></p>
+        </div>
+
+        <div id="forgotPasswordModal" class="modal">
+            <div class="modal-content">
+                <h5>Forgot Password</h5>
+                <p>Please enter your registered email. A password reset link will be sent to your email.</p>
+                <div class="input-field">
+                    <input id="forgotEmail" type="email" class="validate" required>
+                    <label for="forgotEmail">Email</label>
+                    <span class="helper-text" data-error="Invalid email" data-success="Valid email"></span>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                    <a id="sendResetButton" href="#!" class="waves-effect waves-light btn" style="background-color: #4d0000;" onclick="sendResetLink()" disabled>Send Reset Link</a>
+                </div>
+                <p id="forgotErrorMsg" style="color: red;"></p>
+                <p id="confirmationMsg" style="color: green;"></p>
+            </div>
         </div>
 
         <!--CSS Materialize Script CDN-->
