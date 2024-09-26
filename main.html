@@ -13,6 +13,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--CSS Link-->
     <link rel="stylesheet" href="style.css">
+    <!--JS Link-->
+    <link rel="javascript" href="main.js">
     <!--Website Title-->
     <title>St. Vincent College of Cabuyao</title>
 </head>
@@ -212,7 +214,8 @@
                         </div>
                     </div>
 
-                    <div id="activity-modal" class="modal" style="width: 400px; height: 180px; margin-top: 250px; float: right;">
+                    <div id="activity-modal" class="modal"
+                        style="width: 400px; height: 180px; margin-top: 250px; float: right;">
                         <div class="modal-content">
                             <h4 style="font-size: 20px;">Add new activity</h4>
                             <div class="input-field">
@@ -226,121 +229,230 @@
                         </div>
                     </div>
                 </div>
+                <br>
+
+                <div class="box"
+                    style=" background-color: #4d0000;  height: 48vh; width: 1165px; margin-top: 100px; margin-left:60px; border-radius: 7px; ">
+                    <div class="slider-container"
+                        style=" padding-top: 13px; padding-bottom: 5px margin; margin-left: 2px; padding-left: 10px; padding-right: 60px;">
+                        <div class="slider">
+                            <div class="card">
+                                <img src="assets/STS.png" alt="Card 1">
+                                <h2 style="font-weight: 700; color: #4d0000;">SCIENCE TECHNOLOGY AND SOCIETY</h2>
+                                <p>MONDAY: 3:00 - 5:00 PM</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="assets/FILIPINO.png" alt="Card 5">
+                                <h2 style="font-weight: 700; color: #4d0000;">FILIPINO SA IBAT-IBANG DISIPLINA</h2>
+                                <p>TUESDAY: 10:00 - 12:00 PM</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="assets/PURCOM.png" alt="Card 3">
+                                <h2 style="font-weight: 700; color: #4d0000;">PURPOSIVE COMMUNICATION</h2>
+                                <p>TUESDAY: 1:00 - 4:00 PM</p>
+                            </div>
+                            <div class="card">
+                                <img src="assets/PCJS.png" alt="Card 4">
+                                <h2 style="font-weight: 700; color: #4d0000;">PHILIPPINE CRIMINAL JUSTICE SYSTEM</h2>
+                                <p>WEDNESDAY: 7:00 - 10:00 AM</p>
+                            </div>
+                            <div class="card">
+                                <img src="assets/ETHICS.png" alt="Card 2">
+                                <h2 style="font-weight: 700; color: #4d0000;">ETHICS</h2>
+
+                                <p>WEDNESDAY: 10:00 - 12:00 AM</p>
+                            </div>
+                            <div class="card">
+                                <img src="assets/IT.png" alt="Card 6">
+                                <h2 style="font-weight: 700; color: #4d0000;">LIVING IN THE IT ERA</h2>
+                                <p>THURSDAY: 7:00 - 9:00 AM</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="assets/PE.png" alt="Card 8">
+                                <h2>PHYSICAL EDUCATION</h2>
+                                <p>THURSDAY: 9:00 - 11:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="nav-buttons">
+                            <button class="prev" onclick="prevSlide()">&#10094;</button>
+                            <button class="next" onclick="nextSlide()">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <BR><BR></BR></BR>
+
+                <div class="main-layout">
+                    <div class="section catalog"
+                        style="border: 5px solid #4d0000; height: 35vh; overflow-y: scroll;  overflow-x: hidden; background-color: #e7d9d9;">
+                        <h2 style="background-color: #4d0000; width: 380px;">Catalog Overview</h2>
+                        <div style="position: absolute; left: 10px; top: 10px;">
+                            <div class="menu-container">
+                                <i class="fas fa-ellipsis-v" onclick="toggleMenu()"
+                                    style="font-size: 24px; cursor: pointer; color: #ffffff; margin-left: 340px;"></i>
+                                <div id="menu" class="menu-options" style="display: none;">
+
+                                    <b style="font-size: 11px;">Edit Categories</b>
+                                    <b style="font-size: 11px;">Sort Categories</b>
+                                    <b style="font-size: 11px;">View Statistics</b>
+                                </div>
+                            </div>
+                        </div>
+
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Accounting</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Athletics</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Architecture</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Business</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Communication</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Computer Science</b>
+                        <hr>
+                        <b style="margin-left: 5px; color:#4d0000; letter-spacing: 1px;">Sports</b>
+                        <hr>
+
+                    </div>
+
+                    <div class="section group "
+                        style="border: 5px solid #4d0000; background-color: #e7d9d9; height: 35vh;">
+                        <h2 style="background-color: #4d0000; width: 382px;">Group</h2>
+                        <p style="color: #4d0000; padding-left: 10px;">You are not member of any groups</p>
+
+                        <i class="material-icons"
+                            style="color: #4d000052;font-size: 190px; margin-left: 100px; margin-top: -48px;">people</i>
+
+                    </div>
+
+                    <div class="section locker"
+                        style="border: 5px solid #4d0000; background-color: #e7d9d9;  height: 35vh;">
+                        <h2 style="background-color: #4d0000; width: 380px;">Locker</h2>
+
+                        <p style="color: #4d0000; padding-left: 10px;">This is Locker Section</p>
+                    </div>
+                </div>
+
             </div>
 
-        <!--Footer-->
-        <footer class="page-footer" style="background-color: #4d0000; padding-top: 0%;">
-            <div class="footer-copyright ">
-                <div class="col 1"
-                    style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-left: 10px;">
-                    © ST. VINCENT COLLEGE OF CABUYAO
+            <!--Footer-->
+            <footer class="page-footer" style="background-color: #4d0000; padding-top: 0%;">
+                <div class="footer-copyright ">
+                    <div class="col 1"
+                        style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-left: 10px;">
+                        © ST. VINCENT COLLEGE OF CABUYAO
+                    </div>
+                    <div class="col 1 right"><a href="#"
+                            style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-right: 30px;">CONTACT
+                            US</a> <a href="#"
+                            style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-right: 10px;">FAQs</a>
+                    </div>
                 </div>
-                <div class="col 1 right"><a href="#"
-                        style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-right: 30px;">CONTACT
-                        US</a> <a href="#"
-                        style="font-family: georgia; font-size: small; font-style: normal;color: #DACC4B; margin-right: 10px;">FAQs</a>
-                </div>
-            </div>
-        </footer>
+            </footer>
 
-        <!--JQUERY CDN-->
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <!--CSS Materialized JS CDN-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.dropdown-trigger');
-                var instances = M.Dropdown.init(elems, {
-                    closeOnClick: true,
-                    hover: false
+            <!--JQUERY CDN-->
+            <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+            <!--CSS Materialized JS CDN-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.dropdown-trigger');
+                    var instances = M.Dropdown.init(elems, {
+                        closeOnClick: true,
+                        hover: false
+                    });
                 });
-            });
-            $('.carousel.carousel-slider').carousel({
-                fullWidth: true
-            });
+                $('.carousel.carousel-slider').carousel({
+                    fullWidth: true
+                });
 
 
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.modal');
-                var instances = M.Modal.init(elems);
-            });
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.modal');
+                    var instances = M.Modal.init(elems);
+                });
 
-            // Open the modal when clicking the plus sign
-            function openModal() {
-                var instance = M.Modal.getInstance(document.getElementById('activity-modal'));
-                instance.open();
-            }
-
-            // Function to add activity from modal input to the activity list
-            function addActivity() {
-                // Get the new activity from the modal input field
-                var activity = document.getElementById("modal-activity").value;
-
-                // Check if the input is not empty
-                if (activity.trim() !== "") {
-                    // Create a new list item element
-                    var li = document.createElement("li");
-
-                    // Set the text of the list item to the input value
-                    li.textContent = activity;
-
-                    // Append the new list item to the activity list
-                    document.getElementById("activity-list").appendChild(li);
-
-                    // Clear the input field after adding the activity
-                    document.getElementById("modal-activity").value = "";
-
-                    // Close the modal
+                // Open the modal when clicking the plus sign
+                function openModal() {
                     var instance = M.Modal.getInstance(document.getElementById('activity-modal'));
-                    instance.close();
-                }
-            }
-
-            function generateCalendar(year, month) {
-                const monthNames = [
-                    'January', 'February', 'March', 'April', 'May', 'June',
-                    'July', 'August', 'September', 'October', 'November', 'December'
-                ];
-                const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-                // Set current date
-                const currentDate = new Date();
-
-                // Set month and year
-                const firstDay = new Date(year, month, 1);
-                const lastDay = new Date(year, month + 1, 0);
-
-                // Get the first day of the month and the number of days in the month
-                const firstDayOfWeek = firstDay.getDay();
-                const totalDays = lastDay.getDate();
-
-                // Generate the calendar HTML
-                let calendarHTML = days.map(day => `<div class="day">${day}</div>`).join('');
-                for (let i = 0; i < firstDayOfWeek; i++) {
-                    calendarHTML += `<div></div>`;
-                }
-                for (let date = 1; date <= totalDays; date++) {
-                    const isToday = date === currentDate.getDate() && month === currentDate.getMonth() && year ===
-                        currentDate.getFullYear();
-                    calendarHTML += `<div class="date${isToday ? ' today' : ''}">${date}</div>`;
+                    instance.open();
                 }
 
-                // Set month and year
-                document.getElementById('calendar-month-year').innerText = `${monthNames[month]} ${year}`;
-                document.getElementById('calendar-body').innerHTML = calendarHTML;
-            }
+                // Function to add activity from modal input to the activity list
+                function addActivity() {
+                    // Get the new activity from the modal input field
+                    var activity = document.getElementById("modal-activity").value;
 
-            // Get current date
-            const today = new Date();
-            generateCalendar(today.getFullYear(), today.getMonth());
-            document.addEventListener('DOMContentLoaded', function() {
-                var elems = document.querySelectorAll('.carousel');
-                var instances = M.Carousel.init(elems, {
-                    fullWidth: true,
-                    indicators: true
+                    // Check if the input is not empty
+                    if (activity.trim() !== "") {
+                        // Create a new list item element
+                        var li = document.createElement("li");
+
+                        // Set the text of the list item to the input value
+                        li.textContent = activity;
+
+                        // Append the new list item to the activity list
+                        document.getElementById("activity-list").appendChild(li);
+
+                        // Clear the input field after adding the activity
+                        document.getElementById("modal-activity").value = "";
+
+                        // Close the modal
+                        var instance = M.Modal.getInstance(document.getElementById('activity-modal'));
+                        instance.close();
+                    }
+                }
+
+                function generateCalendar(year, month) {
+                    const monthNames = [
+                        'January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'
+                    ];
+                    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+                    // Set current date
+                    const currentDate = new Date();
+
+                    // Set month and year
+                    const firstDay = new Date(year, month, 1);
+                    const lastDay = new Date(year, month + 1, 0);
+
+                    // Get the first day of the month and the number of days in the month
+                    const firstDayOfWeek = firstDay.getDay();
+                    const totalDays = lastDay.getDate();
+
+                    // Generate the calendar HTML
+                    let calendarHTML = days.map(day => `<div class="day">${day}</div>`).join('');
+                    for (let i = 0; i < firstDayOfWeek; i++) {
+                        calendarHTML += `<div></div>`;
+                    }
+                    for (let date = 1; date <= totalDays; date++) {
+                        const isToday = date === currentDate.getDate() && month === currentDate.getMonth() && year ===
+                            currentDate.getFullYear();
+                        calendarHTML += `<div class="date${isToday ? ' today' : ''}">${date}</div>`;
+                    }
+
+                    // Set month and year
+                    document.getElementById('calendar-month-year').innerText = `${monthNames[month]} ${year}`;
+                    document.getElementById('calendar-body').innerHTML = calendarHTML;
+                }
+
+                // Get current date
+                const today = new Date();
+                generateCalendar(today.getFullYear(), today.getMonth());
+                document.addEventListener('DOMContentLoaded', function() {
+                    var elems = document.querySelectorAll('.carousel');
+                    var instances = M.Carousel.init(elems, {
+                        fullWidth: true,
+                        indicators: true
+                    });
                 });
-            });
-        </script>
+            </script>
 </body>
 
 </html>
